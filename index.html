@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set character encoding for the document -->
+    <meta charset="UTF-8">
+    <!-- Set the title of the document -->
+    <title>Study Timetable Generator</title>
+    <!-- Link to an external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include the JavaScript library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <!-- Main heading of the page -->
+    <h1>Study Timetable Generator</h1>
+
+    <!-- Section for user input -->
+    <div id="inputSection">
+        <!-- Input field for subject name -->
+        <label for="subjectName">Subject:</label>
+        <input type="text" id="subjectName" placeholder="Enter subject name">
+
+        <!-- Dropdown for selecting difficulty level -->
+        <label for="difficulty">Difficulty Level:</label>
+        <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+
+        <!-- Button to add a new subject -->
+        <button onclick="addSubject()" id="addBtn">Add Subject</button>
+    </div>
+
+    <!-- Section for setting study hours per day -->
+    <div>
+        <!-- Label for study hours per day -->
+        <label for="studyHoursPerDay">Study Hours per Day:</label>0
+
+        <!-- Input field for entering study hours per day -->
+        <input type="number" id="studyHoursPerDay" value="2" min="1" max="24" onchange="updateStudyHoursPerDay()">
+    </div>
+
+    <!-- Button to save the generated timetable -->
+    <button onclick="saveTimetable()">Save Timetable</button>
+
+    <!-- Container for displaying the timetable -->
+    <div id="timetable"></div>
+
+    <!-- Include the JavaScript file for additional functionality -->
+    <script src="script.js"></script>
+</body>
+
+</html>
